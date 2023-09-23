@@ -1,0 +1,4 @@
+npm init -y
+npm i express cors cookie-parser // для отправки запросов и парса куки
+npm i nodemon --save-dev // для автоматической перезагрузки сервера 
+npm i dotenv // предназначен для конфигруций
