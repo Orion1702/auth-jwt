@@ -48,6 +48,11 @@ class TokenService {
         const tokenData = await tokenModel.findOne({refreshToken})
         return tokenData;
     }
+
+    async removeToken(refreshToken) {
+        const tokenData = await tokenModel.deleteOne({refreshToken})
+        return tokenData;
+    }
 }
 
 module.exports = new TokenService();
