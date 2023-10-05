@@ -1,12 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React, {createContext} from 'react';
+import ReactDOM from 'react-dom';
 import App from './App';
+import Store from "./store/store";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+
+interface State {
+  store: Store,
+}
+
+const store = new Store()
+
+export const Context = createContext<State>({
+  store,
+})
+
+ReactDOM.render(
+  <Context.Provider value={{
+      store
+  }}>
+      <App />
+  </Context.Provider>,
+document.getElementById('root')
 );
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+
+
+
+// OLD from some where
+// const root = ReactDOM.createRoot(
+//   document.getElementById('root') as HTMLElement
+// );
+// root.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );

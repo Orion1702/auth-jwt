@@ -5,4 +5,3 @@ export interface AuthResponse {
     refreshToken: string;
     user: IUser;
 }
- 
